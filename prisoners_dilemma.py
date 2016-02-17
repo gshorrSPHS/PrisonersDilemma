@@ -273,13 +273,25 @@ def get_action(player, history, opponent_history, score, opponent_score, getting
     #
     elif player == 7:
         if getting_team_name:
-            return 'mercurial'
+            return 'Trump: Make Murica Great again.(2016)'
         else:
-            # use history, opponent_history, score, opponent_score
-            # to compute your strategy
-            choices = 'bc'
-            return random.choice(choices)
-
+            match=0
+            betray_count=0
+            our_betray=0
+            for x in history:
+                if 'b' in x:
+                    betray_count+=1
+            for i in opponent_history:
+              if'b' in i:
+                  betray_count+=1 
+            match=len(history)+1
+            if betray_count<2:
+                return 'c'
+            elif betray_count>2:
+                if match%3==0:
+                    return'c'
+                else:
+                    return 'b'
 
 
 
