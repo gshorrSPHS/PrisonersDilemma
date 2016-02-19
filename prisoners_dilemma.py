@@ -249,14 +249,18 @@ def get_action(player, history, opponent_history, score, opponent_score, getting
     #
     elif player == 6:
         if getting_team_name:
-            return 'secret_strat'
+            return 'I Quit'
         else:
             # use history, opponent_history, score, opponent_score
             # to compute your strategy
-            if len(opponent_history)==0: #It's the first round: collude
+            betray = 0
+            for letter in opponent_history:
+                if letter == 'b':
+                    betray += 1
+            if betray == 0:
                 return 'c'
             else:
-                return opponent_history[-1]
+                return 'b'
     
 
 
