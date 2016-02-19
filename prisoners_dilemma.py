@@ -213,16 +213,16 @@ def get_action(player, history, opponent_history, score, opponent_score, getting
     ######
     #
     elif player == 4:
-        if getting_team_name:
-            return 'betray every 3rd round'
+       if getting_team_name:
+        return '42'
+    else:
+        if len(opponent_history)==0: #First round: collude
+            return 'c'
+        elif history[-1]=='c' and opponent_history[-1]=='b':
+            return 'b' # betray if severely punished last time
         else:
-            # use history, opponent_history, score, opponent_score
-            # to compute your strategy
-            size = len(history)
-            if(size%3==0): #the number of rounds played is a multiple of 3
-                return 'b'
-            else:
-                return 'c'
+            return 'c' # otherwise collude
+
     
     
     
