@@ -20,7 +20,6 @@ Draft, Do Not Distribute
 Version 8/23/2013 
 '''
 
-import random
 def play_round(player1, player2, history1, history2, score1, score2):
     '''
     Calls the get_action() function which will get the characters
@@ -176,15 +175,18 @@ def get_action(player, history, opponent_history, score, opponent_score, getting
     #
     elif player == 3:
         if getting_team_name:
-            return 'criminal_respect'
+            return 'Innocent'
         else:
-            if len(history) == 0:
-                return 'b'
-            elif history[-1] == 'b':
+            # use history, opponent_history, score, opponent_score
+            # to compute your strategy
+            if len(opponent_history)==0: #It's the first round: collude
                 return 'c'
+            elif history[-1]=='c' and opponent_history[-1]=='b':
+                return 'b' 
+            elif history[-1]=='b' and opponent_history[-1]=='b':
+                return 'b' 
             else:
-                return 'b'
-
+                return 'c' #otherwise collude
 
 
 
