@@ -418,7 +418,7 @@ def get_action(player, history, opponent_history, score, opponent_score, getting
     #
     elif player == 10:
         if getting_team_name:
-            return 'сука блять'
+            return 'not sure what exactly is appropriate for class'
         else:
             if len(opponent_history)<=1: 
                 return 'b'
