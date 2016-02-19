@@ -110,10 +110,37 @@ def get_action(player, history, opponent_history, score, opponent_score, getting
     #
     # This example player always colludes
     if player == 0:
-        if getting_team_name:
-            return 'hello'
-        else:
-            return 'c'
+	    if getting_team_name:
+	        return 'Global-00'
+	    else:
+	        while 'c' not in opponent_history:
+	            return 'b'
+	        while 'b' not in opponent_history:
+	            return 'b'
+	        if opponent_history[-1] == 'b':
+	           	if opponent_history[-2] == 'c':
+	           	    if opponent_history[-3] == 'b':
+	                   	if opponent_history[-4] =='c':
+	                  	     return 'c'
+	                   	else:
+	                  	     return 'c'
+	                    else:
+	                   	    return 'c'
+	                else:
+	                    return 'b'
+	        elif opponent_history[-1] == 'c':
+	            if opponent_history[-2] == 'b':
+	                if opponent_history[-3] == 'c':
+	                   	if opponent_history[-4] =='b':
+	                  		return 'b'
+	                   	else:
+	                  		return 'c'
+	                else:
+	                   	return 'b'
+	            else:
+	                return 'c'
+	        else:
+	           	return 'b'
 
     
         
