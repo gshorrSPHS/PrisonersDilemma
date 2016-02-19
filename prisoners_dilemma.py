@@ -127,10 +127,23 @@ def get_action(player, history, opponent_history, score, opponent_score, getting
     #
     #This example player always betrays.      
     elif player == 1:
-        if getting_team_name:
-            return 'backstabber'
-        else:
-            return 'b'
+		if getting_team_name:
+	    	return 'Designer Steak'
+		else: 
+            #Some say the world will end in fire,
+            #”Some say in ice.
+            #From what I've tasted of desire
+            a= ['b'] #set a as betrayal
+            #I hold with those who favor fire.
+            #But if it had to perish twice,
+            a+= 'b' #make the magic happen
+            #I think I know enough of hate
+            #To say that for destruction ice
+            NewYorkSteak = (a, 'b', a, 'c', a) #define the high quality meat list
+            #Is also great
+            #And would suffice.”
+            # -Jack Frost
+            return random.choice(NewYorkSteak) #return the recipe for the designer steak
 
 
 
